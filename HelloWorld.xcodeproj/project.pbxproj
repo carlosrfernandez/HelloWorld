@@ -14,6 +14,7 @@
 		074AC92F19A2812000589ED0 /* HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074AC92E19A2812000589ED0 /* HelloWorldTests.swift */; };
 		074AC93919A2886700589ED0 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074AC93819A2886700589ED0 /* APIController.swift */; };
 		074AC94B19A2916300589ED0 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 074AC94A19A2916300589ED0 /* Blank52.png */; };
+		07B6DBD719ABB15900E92C50 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6DBD619ABB15900E92C50 /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		074AC92E19A2812000589ED0 /* HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTests.swift; sourceTree = "<group>"; };
 		074AC93819A2886700589ED0 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		074AC94A19A2916300589ED0 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank52.png; sourceTree = "<group>"; };
+		07B6DBD619ABB15900E92C50 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				074AC92219A2812000589ED0 /* Images.xcassets */,
 				074AC91919A2812000589ED0 /* Supporting Files */,
 				074AC93819A2886700589ED0 /* APIController.swift */,
+				07B6DBD619ABB15900E92C50 /* Album.swift */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				074AC91E19A2812000589ED0 /* SearchResultsViewController.swift in Sources */,
 				074AC91C19A2812000589ED0 /* AppDelegate.swift in Sources */,
 				074AC93919A2886700589ED0 /* APIController.swift in Sources */,
+				07B6DBD719ABB15900E92C50 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,7 @@
 				074AC93419A2812000589ED0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		074AC93519A2812000589ED0 /* Build configuration list for PBXNativeTarget "HelloWorldTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +416,7 @@
 				074AC93719A2812000589ED0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

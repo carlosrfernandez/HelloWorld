@@ -14,9 +14,12 @@ protocol APIControllerProtocol{
 
 class APIController{
     
-    var delegate: APIControllerProtocol?
+    var delegate: APIControllerProtocol
     
-    init(){
+    init(delegate: APIControllerProtocol){
+        
+        self.delegate = delegate
+        
     }
 
     func searchItunesFor(searchTerm: String){
@@ -24,7 +27,7 @@ class APIController{
         let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
         let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-        let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+        let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=music&entity=album"
         
         let url: NSURL = NSURL(string: urlPath)
         
@@ -49,7 +52,7 @@ class APIController{
             
             let results: NSArray = jsonResult["results"] as NSArray
             
-            self.delegate?.didReceiveAPIResults(jsonResult)
+            self.delegate.didReceiveAPIResults(jsonResult)
             
         })
         

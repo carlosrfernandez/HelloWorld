@@ -13,13 +13,19 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.apiController.delegate = self
-        apiController.searchItunesFor("Angry Birds")
+//        self.apiController.delegate = self
+//        apiController.searchItunesFor("Angry Birds")
+        apiController = APIController(delegate: self)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        apiController!.searchItunesFor("Beatles")
     }
     
     @IBOutlet var myAppTableView: UITableView?
     var tableData = []
-    var apiController = APIController()
+    var albums = [Album]()
+    
+    var apiController : APIController?
+    
     let kCellIdentifier: String = "SearchResultCell"
     
     var imageCache = [String: UIImage]()
@@ -30,7 +36,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
-        return tableData.count
+        return albums.count
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell! {
@@ -38,14 +44,17 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
 //        UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
         
-        let rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
-        
-        let cellText: String? = rowData["trackName"] as? String
-        cell.textLabel.text = cellText
+//        let rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
+        let album = self.albums[indexPath.row]
+        cell.textLabel.text = album.title
         cell.imageView.image = UIImage(named: "Blank52")
         
-        let formattedPrice: NSString = rowData["formattedPrice"] as NSString
-        cell.detailTextLabel.text = formattedPrice
+//        let cellText: String? = rowData["trackName"] as? String
+//        cell.textLabel.text = cellText
+//        cell.imageView.image = UIImage(named: "Blank52")
+//        
+        let formattedPrice = album.price
+//        cell.detailTextLabel.text = formattedPrice
 
         
 //        cell.textLabel.text = rowData["trackName"] as String
