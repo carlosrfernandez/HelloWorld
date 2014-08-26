@@ -21,7 +21,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     @IBOutlet var myAppTableView: UITableView?
-    var tableData = []
+//    var tableData = []
     var albums = [Album]()
     
     var apiController : APIController?
@@ -59,7 +59,9 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         
 //        cell.textLabel.text = rowData["trackName"] as String
         
-        let urlString: NSString = rowData["artworkUrl60"] as NSString
+//        let urlString: NSString = rowData["artworkUrl60"] as NSString
+        
+        let urlString = album.thumbnailImageURL
         
         var image = self.imageCache[urlString]
         
@@ -104,17 +106,18 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         var resultsArray: NSArray = results["results"] as NSArray
         
         dispatch_async(dispatch_get_main_queue(), {
-            self.tableData = resultsArray
+            self.albums = Album.albumsWithJSON(resultsArray)
             self.myAppTableView!.reloadData()
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
         
     }
     
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
-        var rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
-        var name: String = rowData["trackName"] as String
-        var price: String = rowData["formattedPrice"] as String
+        var rowData: Album = self.albums[indexPath.row] as Album
+        var name: String = rowData.title
+        var price: String = rowData.price
         
         var alert: UIAlertView = UIAlertView()
         alert.title = name
