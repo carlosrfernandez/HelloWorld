@@ -15,6 +15,7 @@
 		074AC93919A2886700589ED0 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074AC93819A2886700589ED0 /* APIController.swift */; };
 		074AC94B19A2916300589ED0 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 074AC94A19A2916300589ED0 /* Blank52.png */; };
 		07B6DBD719ABB15900E92C50 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6DBD619ABB15900E92C50 /* Album.swift */; };
+		07B6DBDC19ACF7F800E92C50 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6DBDB19ACF7F800E92C50 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		074AC93819A2886700589ED0 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		074AC94A19A2916300589ED0 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank52.png; sourceTree = "<group>"; };
 		07B6DBD619ABB15900E92C50 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		07B6DBDB19ACF7F800E92C50 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				074AC91919A2812000589ED0 /* Supporting Files */,
 				074AC93819A2886700589ED0 /* APIController.swift */,
 				07B6DBD619ABB15900E92C50 /* Album.swift */,
+				07B6DBDB19ACF7F800E92C50 /* DetailsViewController.swift */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				074AC91C19A2812000589ED0 /* AppDelegate.swift in Sources */,
 				074AC93919A2886700589ED0 /* APIController.swift in Sources */,
 				07B6DBD719ABB15900E92C50 /* Album.swift in Sources */,
+				07B6DBDC19ACF7F800E92C50 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
